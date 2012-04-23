@@ -1,0 +1,213 @@
+wget http://www.kegel.com/wine/winetricks 
+
+
+sh winetricks corefonts vcrun6 
+
+
+Usage: winetricks [options] package [package] ...
+This script can help you prepare your system for Windows applications
+that mistakenly assume all users' systems have all the needed
+redistributable runtime libraries or fonts.
+Some options require the Linux 'cabextract' program.
+Options:
+ -q         quiet.  You must have already agreed to the EULAs.
+ -v         verbose
+ -V         display Version
+Packages:
+ 7zip          7-zip file archiver
+ adobeair      Adobe AIR runtime
+ art2kmin      MS Access 2007 runtime
+ atmlib        Adobe Type Manager. Needed for Adobe CS4
+ autohotkey    Autohotkey (open source gui scripting language)
+ baekmuk       Baekmuk Korean fonts
+ cmake         CMake, the cross-platform, open-source build system
+ colorprofile  Standard RGB color profile
+ comctl32      MS common controls 5.80
+ comctl32.ocx  MS comctl32.ocx and mscomctl.ocx, comctl32 wrappers for VB6
+ comdlg32.ocx  MS comdlg32.ocx for VB6
+ controlpad    MS ActiveX Control Pad
+ corefonts     MS Arial, Courier, Times fonts
+ crypt32       MS crypt32.dl
+ cygwin        Unix apps for Windows (needed by some build scripts)
+ d3dx9         MS d3dx9_??.dll (from DirectX 9 user redistributable)
+ d3dx9_28      MS d3dx9_28.dll
+ d3dx9_36      MS d3dx9_36.dll
+ d3dx10        MS d3dx10_??.dll (from DirectX user redistributable)
+ d3dxof        MS d3dxof.dll (from DirectX user redistributable)
+ dcom98        MS DCOM (ole32, oleaut32); requires Windows 98 license, but does not check for one
+ devenum      MS devenum.dll (from DirectX 9 user redistributable)
+ dinput8       MS dinput8.dll (from DirectX 9 user redistributable)
+ dirac         the Dirac directshow filter
+ directmusic   MS DirectMusic (from DirectX 9 user redistributable)
+ directplay    MS DirectPlay (from DirectX 9 user redistributable)
+ directx9      MS DirectX 9 user redistributable (not recommended! use d3dx9 instead)
+ directx9-beta MS DirectX 9 user redistributable - beta verb (not recommended! use d3dx9 instead)
+ divx          divx video codec
+ dotnet11      MS .NET 1.1 (requires Windows license, but does not check for one)
+ dotnet20      MS .NET 2.0 (requires Windows license, but does not check for one)
+ dotnet20sp2   MS .NET 2.0 sp2 (requires Windows license, but does not check for one)
+ dotnet30      MS .NET 3.0 (requires Windows license, but does not check for one, might not work yet)
+ droid         Droid fonts (on LCD, looks better with fontsmooth-rgb)
+ dsound        MS dsound.dll (from DirectX 9 user redistributable)
+ dxsdk_nov2006 DirectX Software Development Kit, November 2006 version
+ eadm          EA Download Manager
+ eufonts       Updated fonts for Romanian and Bulgarian
+ fakechinese   Creates aliases for Chinese fonts using WenQuanYi fonts
+ fakejapanese  Creates aliases for Japanese fonts using Takao fonts
+ fakekorean    Creates aliases for Korean fonts using Baekmuk fonts
+ ffdshow       ffdshow video codecs
+ firefox       Firefox web browser
+ flash         Adobe Flash Player ActiveX and firefox plugins
+ fm20          MS Forms 2.0 Object Library
+ fontfix       Fix bad fonts which cause crash in some apps (e.g. .net).
+ fontsmooth-bgr        Enables subpixel smoothing for BGR LCDs
+ fontsmooth-disable    Disables font smoothing
+ fontsmooth-gray       Enables grayscale font smoothing
+ fontsmooth-rgb        Enables subpixel smoothing for RGB LCDs
+ gdiplus       MS gdiplus.dll
+ gecko-dbg     The HTML rendering Engine (Mozilla), with debugging symbols
+ gecko         The HTML rendering Engine (Mozilla)
+ gfw           MS Game For Windows Live (xlive.dll)
+ glut          The glut utility library
+ hosts         Adds empty C:\windows\system32\drivers\etc\{hosts,services} files
+ ie6           Microsoft Internet Explorer 6.0
+ ie6_full      Microsoft Internet Explorer 6.0, full installer
+ ie7           Microsoft Internet Explorer 7.0
+ ie8           Microsoft Internet Explorer 8.0
+ jet40         MS Jet 4.0 Service Pack 8
+ kde           KDE for Windows installer
+ liberation    Red Hat Liberation fonts (Sans, Serif, Mono)
+ lucida        MS Lucida Console font
+ mdac25        MS MDAC 2.5: Microsoft ODBC drivers, etc.
+ mdac27        MS MDAC 2.7
+ mdac28        MS MDAC 2.8
+ mfc40         MS mfc40 (Microsoft Foundation Classes from Visual C++ 4)
+ mfc42         MS mfc42 (same as vcrun6 below)
+ mingw-gdb     GDB for MinGW
+ mingw         Minimalist GNU for Windows, including GCC for Windows!
+ mono26        mono-2.6
+ mozillabuild  Mozilla build environment
+ mpc           Media Player Classic
+ mshflxgd      MS Hierarchical FlexGrid Control
+ msi2          MS Windows Installer 2.0
+ msls31        MS Line Services 3.1 (needed by native riched?)
+ msmask        MS Masked Edit Control
+ mspaint       MS Paint (gotta draw stick figures somehow...)
+ msscript      MS Windows Script Control
+ msxml3        MS XML Core Services 3.0
+ msxml4        MS XML Core Services 4.0
+ msxml6        MS XML Core Services 6.0
+ ogg           ogg filters/codecs: flac, theora, speex, vorbis, schroedinger
+ ole2          MS 16 bit OLE
+ openwatcom    Open Watcom C/C++ compiler (can compile win16 code!)
+ pdh           MS pdh.dll (Performance Data Helper)
+ physx         NVIDIA/AGEIA PhysX runtime
+ psdk2003      MS Platform SDK 2003
+ psdkvista     MS Vista SDK (does not install yet)
+ psdkwin7      MS Windows 7 SDK (installing just headers and c++ compiler works)
+ python26      Python 2.6.2 (and pywin32)
+ python-comtypes Python 0.6.1-1 comtypes package
+ quartz        quartz.dll (from Directx 9 user redistributable)
+ quicktime72   Apple Quicktime 7.2
+ quicktime76   Apple Quicktime 7.6
+ riched20      MS RichEdit Control, riched20 and riched32
+ riched30      MS RichEdit Control, riched30
+ richtx32      MS Rich TextBox Control 6.0
+ safari        Apple Safari web browser
+ secur32       MS secur32
+ shockwave     Adobe Shockwave Player
+ steam         Steam Client App from Valve
+ tahoma        MS Tahoma font (not part of corefonts)
+ takao         Takao Japanese fonts
+ unifont       Unifont alternative to Arial Unicode MS
+ urlmon        MS urlmon.dll
+ usp10         MS usp10.dll (Uniscribe)
+ utorrent      uTorrent
+ vb2run        MS Visual Basic 2 runtime
+ vb3run        MS Visual Basic 3 runtime
+ vb4run        MS Visual Basic 4 runtime
+ vb5run        MS Visual Basic 5 runtime
+ vb6run        MS Visual Basic 6 Service Pack 6 runtime
+ vc2005express MS Visual C++ 2005 Express
+ vc2005expresssp1 MS Visual C++ 2005 Express SP1 (does not work yet)
+ vc2005sp1     MS Visual C++ 2005 Service Pack 1 and ATL fix (install trial 1st)
+ vc2005hotfix  MS Visual C++ 2005 hotfixes (install sp1 1st)
+ vc2005trial   MS Visual C++ 2005 Trial
+ vcrun2003     MS Visual C++ 2003 libraries (mfc71,msvcp71,msvcr71)
+ vcrun2005     MS Visual C++ 2005 sp1 libraries (mfc80,msvcp80,msvcr80)
+ vcrun2008     MS Visual C++ 2008 libraries (mfc90,msvcp90,msvcr90)
+ vcrun2010     MS Visual C++ 2010 libraries (mfc100,msvcp100,msvcr100)
+ vcrun6        MS Visual C++ 6 sp4 libraries (mfc42, msvcp60, msvcrt)
+ vcrun6sp6     MS Visual C++ 6 sp6 libraries (mfc42, msvcp60, msvcrt; 64 MB download)
+ vjrun20       MS Visual J# 2.0 SE libraries (requires dotnet20)
+ vlc           VLC media player
+ wenquanyi     WenQuanYi CJK font (on LCD looks better with fontsmooth-rgb)
+ windowscodecs MS Windows Imaging Component
+ winhttp       MS winhttp.dll (requires Windows license, but does not check for one)
+ wininet       MS wininet.dll (requires Windows license, but does not check for one)
+ wme9          MS Windows Media Encoder 9 (requires Windows license, but does not check for one)
+ wmp10         MS Windows Media Player 10 (requires Windows license, but does not check for one)
+ wmp9          MS Windows Media Player 9 (requires Windows license, but does not check for one)
+ wsh56js       MS Windows scripting 5.6, jscript only, no cscript
+ wsh56         MS Windows Scripting Host 5.6
+ wsh56vb       MS Windows scripting 5.6, vbscript only, no cscript
+ xact          MS XACT Engine (x3daudio?_?.dll, xactengine?_?.dll)
+ xinput        MS XInput (Xbox controller support, xinput?_?.dll)
+ xvid          xvid video codec
+Pseudopackages:
+ alldlls=builtin  Force use of builtin dlls (even if loaded with absolute path) (except for msvcp80 and d3dx9_*)
+ alldlls=default  Remove all DLL overrides
+ allfonts      All listed fonts and aliases (corefonts, droid, eufonts, liberation, lucida, tahoma, cjkfonts)
+ allcodecs     All listed codecs (xvid, ffdshow)
+ cjkfonts      All Chinese, Japanese, Korean fonts and aliases (fakechinese, fakejapanese, fakekorean, unifont)
+ ddr=gdi       Set DirectDrawRenderer to GDI (default)
+ ddr=opengl    Set DirectDrawRenderer to OpenGL
+ dsoundbug9612 Use DirectSound MaxShadowSize=0 workaround for bug #9612
+ forcemono     Force using mono instead of .Net (for debugging)
+ glsl-disable  Disable GLSL use by Wine Direct3D
+ glsl-enable   Enable GLSL use by Wine Direct3D (default)
+ heapcheck     Enable heap checking
+ multisampling=enabled  Enable Direct3D multisampling
+ multisampling=disabled Disable Direct3D multisampling (default)
+ native_mdac   Override odbc32, odbccp32 and oledb32
+ native_oleaut32 Override oleaut32
+ nocrashdialog Disable the graphical crash dialog
+ orm=backbuffer Registry tweak: OffscreenRenderingMode=backbuffer
+ orm=fbo        Registry tweak: OffscreenRenderingMode=fbo (default)
+ rtlm=auto      Set RenderTargetLockMode to auto (default)
+ rtlm=disabled  Set RenderTargetLockMode to disabled
+ rtlm=readdraw  Set RenderTargetLockMode to readdraw
+ rtlm=readtex   Set RenderTargetLockMode to readtex
+ rtlm=texdraw   Set RenderTargetLockMode to texdraw
+ rtlm=textex    Set RenderTargetLockMode to textex
+ sandbox        Sandbox the wineprefix - remove links to ~
+ sound=alsa       Set sound driver to ALSA
+ sound=audioio    Set sound driver to AudioIO
+ sound=coreaudio  Set sound driver to CoreAudio
+ sound=esd        Set sound driver to Esound
+ sound=jack       Set sound driver to Jack
+ sound=nas        Set sound driver to Nas
+ sound=oss        Set sound driver to OSS
+ sound=disabled   Disable sound
+ strictdrawordering=enabled Enable StrictDrawOrdering (default)
+ strictdrawordering=disabled Disable StrictDrawOrdering
+ nt40          Set windows version to nt40
+ vd=off        Disable virtual desktop
+ vd=1024x768   Enable virtual desktop, set size to 1024x768
+ win98         Set windows version to Windows 98
+ win2k         Set windows version to Windows 2000
+ winxp         Set windows version to Windows XP
+ vista         Set windows version to Windows Vista
+ win7          Set windows version to Windows 7
+ winver=       Set windows version to default (winxp)
+ volnum        Rename drive_c to harddiskvolume0 (needed by some installers)
+ mwo=force       Set MouseWarpOverride to force (needed by some games)
+ mwo=enabled   Set MouseWarpOverride to enabled (default)
+ mwo=disable  Set MouseWarpOverride to disable
+ npm-repack    Set NonPower2Mode to repack
+ psm=on        Set PixelShaderMode to enabled
+ psm=off       Set PixelShaderMode to disabled
+ vsm-hard      Set VertexShaderMode to hardware
+
+
+example:env WINEPREFIX=~/.winetest winetricks mfc40 

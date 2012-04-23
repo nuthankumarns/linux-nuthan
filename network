@@ -1,0 +1,45 @@
+shows me what ports are in use. How to free up a port, in Linux?
+netstat -tulnap
+--------------------------------------------------------------------
+netstat commands
+netstat --tcp
+netstat --inet -n|grep 11050
+netstat -an | grep :80 | sort
+--------------------------------------------------------
+lsof -i :port
+lsof -i :8888
+-----------------------------------------
+tcp/udp commands
+netstat -an|grep 11050
+Display Currently Established, Closed, Orphaned and Waiting TCP sockets, enter: #ss -s #netstat -s
+Display All Open Network Ports# ss -l
+Display All TCP Sockets# ss -t -a # netstat -nat
+Display All UDP Sockets# ss -u -a
+View Established Connections Only# netstat -natu | grep 'ESTABLISHED'
+---------------------------------------------------
+iftop command
+The iftop command listens to network traffic on a given network interface such as eth0, and displays a table of current bandwidth usage by pairs of hosts:
+# iftop -i eth1
+It can display or analyses packet flowing in and out of the 192.168.1.0/24 network:
+# iftop -F 192.168.1.0/24
+---------------------------
+to check tcp dump
+tcpdump -i eth1 tcp port 11050
+tcpdump port 11050 -l > webdump.txt & tail -f webdump.txt -vvv
+tcpdump -w tcp.pcap -i eth1 tcp port 11050 -vv
+tcpdump -w test.pcap -i eth1 tcp port 11050
+tcpdump -i eth1 -U -s 11050 -w - |tee file | tcpdump -lnr -
+tcpdump -i eth1 -U -s 11050 -w file
+
+to read tcpdump
+tcpdump -qns 0 -X -r serverfault_request.pcap
+tcpdump -qns 0 -A -r serverfault_request.pcap
+
+tshark
+tshark -i eth1 tcp port 11050 -w december12
+tshark -r december12
+-------------------------------------------------
+netstat --programs
+--------------------------------------------------
+display all connected devices
+nmap -sP 192.168.1.0/24

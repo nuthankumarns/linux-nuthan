@@ -1,0 +1,28 @@
+Remote Database Access
+http://www.cyberciti.biz/tips/how-do-i-enable-remote-access-to-mysql-database-server.html
+----------------------------------------------------------------------------
+mysql -u username -p
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+php -r 'mysql_connect();'
+-------------------------------------------------------------------
+mysql -p -e"SHOW DATABASES;"
+-========================================================
+mysql running or not
+ps -ef | grep mysqld
+************************************************************8
+check mysqld is running
+mysqladmin -u root -p status
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+resetting root password mysql
+/etc/init.d/mysqld stop
+mysqld_safe --skip-grant-tables &
+mysql -u root
+mysql> use mysql;
+mysql> update user set password=PASSWORD("newrootpassword") where User='root';
+mysql> flush privileges;
+mysql> quit
+/etc/init.d/mysqld stop
+/etc/init.d/mysqld start
+----------------------------------------------------------------------
+http://www.yolinux.com/TUTORIALS/LinuxTutorialMySQL.html
+

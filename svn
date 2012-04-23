@@ -1,0 +1,32 @@
+sudo svn import -m "importing nuthan code" /home/tritonetech/nuthancode/vts.sql svn+ssh://nuthan@118.102.132.147/var/svn/vehical/trunk
+
+sudo svn co svn+ssh://nuthan@118.102.132.147/var/svn/vehical/trunk testcheckout
+
+
+
+Global setup:
+ Set up git
+  git config --global user.name "Nuthan Santharam"
+  git config --global user.email nuthankumarns@gmail.com
+      
+Next steps:
+  mkdir demo
+  cd demo
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:nuthansantharam/demo.git
+  git push -u origin master
+      
+Existing Git Repo?
+  cd existing_git_repo
+  git remote add origin git@github.com:nuthansantharam/demo.git
+  git push -u origin master
+      
+Importing a Subversion Repo?
+  Check out the guide for step by step instructions.
+      
+When you're done:
+  Continue
+

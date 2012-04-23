@@ -1,0 +1,105 @@
+http://www.gurulabs.com/downloads/GURULABS-RPM-LAB/GURULABS-RPM-GUIDE-v1.0.PDF
+http://httpd.apache.org/docs/2.3/platform/rpm.html
+
+Linux Distribution version
+cat /etc/*-release
+----------------------------------------------------------------
+
+pstree	 Processes and parent-child relationships
+top	 Show top processes
+iostat	 Report CPU statistics and input/output statistics for devices and partitions.
+ps -auxw	 process status
+uname -a	 print system information
+cat /proc/version	 Display Linux kernel version in use.
+cat /etc/redhat-release	 Display Red Hat Linux Release. (also /etc/issue)
+uptime	Tell how long the system has been running. Also number of users and system's load average.
+w	Show who is logged on and what they are doing.
+/sbin/lsmod	List all currently loaded kernel modules.
+Same as cat /proc/modules
+/sbin/runlevel	Displays the system's current runlevel.
+hostname	Displays/changes the system's node name. (Must also manually change hostname setting in /etc/sysconfig/network. Command will change entry in /etc/hosts)
+service	Red Hat/Fedora command to display status of system services.
+Example: service --status-all
+Help: service --help
+-------------------------------------------------------------------
+to determine SOURCES
+rpm --eval '%{_sourcedir}'
+-----------------------------------------
+generating rpm build
+rpmbuild -ba /tmp/cdplayer/.spec
+........................................
+determine mysql rpm version
+rpm -qa | grep -i mysql
+---------------------------
+./configure --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql=/usr/bin/ --with-libdir=lib64
+-----------------------------
+to check version installed in redhat in apachetl working directory
+./apachetl -v
+-----------------------------------
+check php-mysql connectivity
+rpm -qa | grep php
++++++++++++++++++++++++++++++++++++++++++++++++
+check mysql connection
+netstat -vat |grep sql
+---------------------------------------------
+check php- function
+php -r 'mysql_connect();'
+------------------------------------------
+rpm -Uvh *.rpm
+------------------------------------
+rpm -qa | grep -i php
+------------------------
+dependancies
+rpm -Uvh mysql-libs-5.0.68-1.el4_6.x86_64.rpm
+rpm -Uvh openssl097a-0.9.7a-9.el5_4.2.x86_64.rpm
+---------------------
+rpm -qa |grep php |grep mysql 
+php-mysql-5.1.6-5.el5
+-----------------------
+check dependancies
+rpm --verify php-mysql
+rpm -q -l
+rpm -q -l php-mysql | xargs ls -l
+------------------------------
+Enable yum on non RHN
+https://fedoraproject.org/wiki/EPEL
+----------------------------------------
+check ports and pid
+netstat -lp
+---------------------------
+check for forketd init
+ps -ef | grep init
+---------------------
+check if installed
+rpm -q vsftpd
+---------------------------------
+Create a FTP user group. eg: ftpaccounts 
+#/usr/sbin/groupadd ftpaccounts 
+
+Add a new user to this group, and set the default path of that user to /home/user/. 
+#/usr/sbin/adduser -g ftpaccounts -d /home/user/ testuser 
+
+Set a password for the newley created user. 
+#passwd testuser 
+
+Set ownership of /home/user to the testuser and ftpaccounts. 
+#chown testuser:ftpaccounts /home/user 
+
+Give Read/Write access to testuser and all members in ftpaccounts 
+#chmod 775 /home/user 
+
+Edit /etc/vsftpd/vsftpd.conf file and make sure 'local_enable=YES' is uncommented. 
+
+Restart the vsftpd service. 
+#/etc/init.d/vsftpd restart 
+--------------------------------------------
+ftp /var/www permissions
+chown -R webadmin2 /var/www/html
+--------------------------------------------
+sudo /usr/sbin/apachectl stop
+------------------------------------------------
+php - SSL
+ php -i | grep ssl 
+find / -name "openssl" | grep php
+php -r "phpinfo();" | grep ssl
+

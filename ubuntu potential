@@ -1,0 +1,58 @@
+APT, the Advanced Packaging Tool
+======================================
+
+apt-get install <package1_name> <package2_name> <package3_name>
+-------------------------------------------------------------------------
+Use the -s flag to simulate an action."sudo apt-get -s install <package_name>" will simulate installing the package showing you what packages will be installed and configured. 
+---------------------------------------------------------
+# auto-apt run ./configure
+------------------------------]
+It's always a good idea to backup a configuration file like sources.list before you edit it. To do so, issue the following command: 
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+------------------------------
+deb: These repositories contain binaries or precompiled packages. These repositories are required for most users. 
+deb-src: These repositories contain the source code of the packages. Useful for developers. 
+http://archive.ubuntu.com/ubuntu: The URI (Uniform Resource Identifier), in this case a location on the internet. See the official mirror list or the self-maintained mirror list to find other mirrors. 
+hardy is the release name or version of your distribution. 
+main & restricted are the section names or components. There can be several section names, separated by spaces. 
+----------------------------------------------------------------
+sudo apt-get update
+retrieve the updated package lists from the newly added repositories by issuing the following command: 
+---------------------------------------------------------------------------------------
+Launchpad PPA (Personal Package Archive) 
+----------------------------------------
+Grep is a command line tool that allows you to find a string in a file or stream. It can be used with Regular expression to be more flexible at finding strings. 
+-----------------------------------------------
+Linux systems a program called bash (which stands for Bourne Again SHell, an enhanced version of the original Bourne shell program, sh, written by Steve Bourne) acts as the shell program. There are several additional shell programs available on a typical Linux system. These include: ksh, tcsh and zsh.
+----------------------------------------------
+There are several ways you can accomplish that.
+
+1. One way is to create an alias in the shell, so that when you type "calibre", the shell automatically expands that to the full name of the executable, including the path. You didn't mention it, so let's pretend that it's "/opt/calibre/bin/calibre". (Please keep in mind throughout all the examples in this post that you would substitute the correct path and filename where I have used "/opt/calibre/bin/calibre".) What you would do is edit your shell startup file to establish the alias when you login. The best place to do this at the bottom of your ~/.bashrc file (this is an example; substitute your information):
+Code:
+
+alias calibre="/opt/calibre/bin/calibre"
+
+If you want other users of your computer to also be able to do this, then you could make this same addition to the system-wide bash startup file located in /etc (it might be "bashrc", but I don't know since I don't use Ubuntu), or you could add this to /etc/skel/.bashrc in which case it would automatically be in the ~/.bashrc files of new users.
+
+
+2. A second way is to modify your PATH variable. A user's PATH variable contains a list of directories on the system that will automatically be searched for an executable when only the basename is given. If you add "/opt/calibre/bin" to your PATH, then you would be able to simply type "calibre" and it would find it there and execute it. You do this also in a shell startup file; the best place to do this is in your ~/.bash_profile file (this is an example; substitute your information):
+Code:
+
+export PATH="/opt/calibre/bin:${PATH}"
+
+If you choose this second method and you want other users of your computer to also be able to do this, then you could make this same addition to the system-wide bash startup file located in /etc (it might be "bash_profile" or simply "profile", but I don't know since I don't use Ubuntu), or you could add this to /etc/skel/.bash_profile in which case it would automatically be in the ~/.bashrc files of new users.
+
+
+3. A third way to do this is create a symbolic link (symlink) to the calibre executable, locate in another directory that is already in your PATH. You can see what your PATH variable currently contains like this:
+Code:
+
+echo $PATH
+
+Let's say, for the sake of argument that "/usr/local/bin" is already in your PATH. That's a good place for user-installed executables to be. You could create a symlink there, pointing to the calibre executable like so (this is an example; substitute your information):
+Code:
+
+ln -s /opt/calibre/bin/calibre /usr/local/bin/calibre
+
+4. A fourth way to do this is applicable only if you use a graphical environment (e.g. Gnome, KDE, or a window manager). You would create a menu item that starts the program when you select it. Exactly how you do this depends upon the graphical environment you are using and whether calibre is a graphical program or runs in a terminal. You can combine this with any of the other three methods above (so you only have to type the shorter command into the menu item or icon, and so you can have the option of executing the command manually.
+
+

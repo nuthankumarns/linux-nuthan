@@ -1,0 +1,15 @@
+But command
+# aptitude purge '~nzend.* '
+didn't finish correctly as there were problems with packages 
+jobqueue-zend-server 
+and 
+help-zend-server
+
+And now the command
+
+sudo aptitude -f install
+-------------------------------------------------\
+o uninstall Zend Server (leaving the configuration files in place) run:
+ # aptitude remove '~izend'
+To delete Zend Server from the system with no traces left run:
+# aptitude purge '~nzend'
